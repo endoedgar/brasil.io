@@ -15,7 +15,7 @@ env:
 before_script:
     - docker-compose -p $PROJECT_NAME -f $DOCKER_COMPOSE_FILE up -d
     - pip install -r requirements.txt
-    - docker-compose up
+    - docker-compose up -d
     - python manage.py migrate
     - python manage.py update_data
 
