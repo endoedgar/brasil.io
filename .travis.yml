@@ -11,8 +11,12 @@ services:
 env:
     DOCKER_COMPOSE_FILE: docker-compose.yml
     PROJECT_NAME: brasil.io
+    ENV_FILE: .env
 
 before_script:
+    - set -o allexport
+	- source "$ENV_FILE"
+	- set +o allexport
     - docker-compose -p $PROJECT_NAME -f $DOCKER_COMPOSE_FILE up -d
     - pip install -r requirements.txt
     - docker-compose up -d
