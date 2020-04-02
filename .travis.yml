@@ -15,8 +15,8 @@ env:
 
 before_script:
     - set -o allexport
-	- source "$ENV_FILE"
-	- set +o allexport
+    - source "$ENV_FILE"
+    - set +o allexport
     - docker-compose -p $PROJECT_NAME -f $DOCKER_COMPOSE_FILE up -d
     - pip install -r requirements.txt
     - docker-compose up -d
