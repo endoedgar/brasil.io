@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ endoedgar/github-actions-ci-1 ]
+    branches: [ develop ]
   pull_request:
-    branches: [ endoedgar/github-actions-ci-1 ]
+    branches: [ develop ]
 
 jobs:
   build:
